@@ -1,0 +1,41 @@
+{
+  "name": "Java Development",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+  
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21",
+      "installMaven": "true",
+      "installGradle": "true"
+    }
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vscjava.vscode-java-dependency",
+        "vscjava.vscode-java-test",
+        "vscjava.vscode-maven",
+        "vscjava.vscode-gradle",
+        "redhat.java",
+        "vscjava.vscode-java-debug"
+      ],
+      "settings": {
+        "java.home": "/usr/local/sdkman/candidates/java/current",
+        "java.configuration.detectJdksAtStart": false,
+        "java.compile.nullAnalysis.mode": "automatic",
+        "java.format.settings.url": "",
+        "java.saveActions.organizeImports": true,
+        "editor.formatOnSave": true,
+        "files.autoSave": "afterDelay"
+      }
+    }
+  },
+
+  "forwardPorts": [],
+
+  "postCreateCommand": "java -version && javac -version",
+
+  "remoteUser": "vscode"
+}

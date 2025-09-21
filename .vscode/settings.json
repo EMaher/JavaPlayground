@@ -1,0 +1,25 @@
+{
+  "java.configuration.runtimes": [],
+  "java.debug.settings.hotCodeReplace": "auto",
+  "java.debug.settings.enableRunDebugCodeLens": true,
+  "java.test.editor.enableShortcuts": true,
+  "java.inlayHints.parameterNames.enabled": "all",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/bin": true,
+    "**/target": true,
+    "**/.gradle": true,
+    "**/build": true
+  },
+  "java.project.sourcePaths": [
+    "src"
+  ],
+  "java.project.outputPath": "bin",
+  "java.clean.workspace": false
+}
