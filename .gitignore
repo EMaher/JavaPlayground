@@ -28,7 +28,7 @@ replay_pid*
 *.iml
 *.ipr
 *.iws
-.vscode/
+.vscode/*
 !.vscode/settings.json
 !.vscode/launch.json
 
