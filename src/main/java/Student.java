@@ -61,6 +61,24 @@ public class Student {
     }
 
     /**
+     * Says hello to the teacher for a specific period.
+     * Looks up the course being taken during that period and greets the teacher.
+     *
+     * @param period the period number
+     * @return the greeting message, or an appropriate message if no course is scheduled
+     */
+    public String helloTeacher(int period) {
+        // Since the schedule is a list without period mapping, we'll use the period as an index
+        // This assumes periods are 1-based and correspond to schedule positions
+        if (period < 1 || period > schedule.size()) {
+            return "Hello! I don't have a class during period " + period + ".";
+        }
+        
+        Course course = schedule.get(period - 1); // Convert to 0-based index
+        return "Hello " + course.getTeacher() + "!";
+    }
+
+    /**
      * Adds a Course to the student's schedule if it isn't already present.
      *
      * @param course the Course to add

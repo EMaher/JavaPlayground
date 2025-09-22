@@ -42,4 +42,29 @@ public class StudentTest {
 
         assertEquals(0, s.getSchedule().size(), "schedule should be empty after removal");
     }
+
+    @Test
+    void helloTeacher() {
+        // Test with no courses scheduled
+        String greeting = s.helloTeacher(1);
+        assertEquals("Hello! I don't have a class during period 1.", greeting);
+
+        // Add a course and test greeting
+        s.addClassToSchedule(algebra);
+        greeting = s.helloTeacher(1);
+        assertEquals("Hello Ms. Lee!", greeting);
+
+        // Add another course and test second period
+        s.addClassToSchedule(history);
+        greeting = s.helloTeacher(2);
+        assertEquals("Hello Mr. Brown!", greeting);
+
+        // Test period out of range
+        greeting = s.helloTeacher(5);
+        assertEquals("Hello! I don't have a class during period 5.", greeting);
+
+        // Test period 0 (invalid)
+        greeting = s.helloTeacher(0);
+        assertEquals("Hello! I don't have a class during period 0.", greeting);
+    }
 }
