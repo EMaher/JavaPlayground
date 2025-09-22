@@ -14,14 +14,14 @@ public class Course {
     private final String id;
     private String courseName;
     private String subjectName;
-    private String teacher;
+    private int period;
     private final Set<Integer> allowedGrades;
 
-    public Course(String courseName, String subjectName, String teacher, Set<Integer> allowedGrades) {
+    public Course(String courseName, String subjectName, int period, Set<Integer> allowedGrades) {
         this.id = UUID.randomUUID().toString();
         this.courseName = courseName == null ? "" : courseName;
         this.subjectName = subjectName == null ? "" : subjectName;
-        this.teacher = teacher == null ? "" : teacher;
+        this.period = period;
         this.allowedGrades = allowedGrades == null ? new HashSet<>() : new HashSet<>(allowedGrades);
     }
 
@@ -45,12 +45,12 @@ public class Course {
         this.subjectName = subjectName == null ? "" : subjectName;
     }
 
-    public String getTeacher() {
-        return teacher;
+    public int getPeriod() {
+        return period;
     }
 
-    public void setTeacher(String teacher) {
-        this.teacher = teacher == null ? "" : teacher;
+    public void setPeriod(int period) {
+        this.period = period;
     }
 
     /**
@@ -94,7 +94,7 @@ public class Course {
                 "id='" + id + '\'' +
                 ", courseName='" + courseName + '\'' +
                 ", subjectName='" + subjectName + '\'' +
-                ", teacher='" + teacher + '\'' +
+                ", period=" + period +
                 ", allowedGrades=" + allowedGrades +
                 '}';
     }

@@ -16,14 +16,14 @@ public class CourseTest {
     @BeforeEach
     void setUp() {
         Set<Integer> grades = new HashSet<>(Arrays.asList(9, 10));
-        c1 = new Course("Algebra I", "Mathematics", "Mrs. Smith", grades);
+        c1 = new Course("Algebra I", "Mathematics", 1, grades);
     }
 
     @Test
     void courseProperties() {
         assertEquals("Algebra I", c1.getCourseName(), "courseName should match");
         assertEquals("Mathematics", c1.getSubjectName(), "subjectName should match");
-        assertEquals("Mrs. Smith", c1.getTeacher(), "teacher should match");
+        assertEquals(1, c1.getPeriod(), "period should match");
     }
 
     @Test
@@ -40,7 +40,7 @@ public class CourseTest {
 
     @Test
     void uniqueIds() {
-        Course c2 = new Course("Geometry", "Mathematics", "Mr. Allen", new HashSet<>(Arrays.asList(9, 10)));
+        Course c2 = new Course("Geometry", "Mathematics", 2, new HashSet<>(Arrays.asList(9, 10)));
         assertNotEquals(c1.getId(), c2.getId(), "two courses should have unique ids");
     }
 }

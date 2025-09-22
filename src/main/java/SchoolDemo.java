@@ -4,45 +4,57 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * A simple demonstration of the Teacher and Student classes interaction.
+ * A simple demonstration of the MasterSchedule system with Teacher and Student classes.
  */
 public class SchoolDemo {
 
     public static void main(String[] args) {
-        System.out.println("=== School Demo ===\n");
+        System.out.println("=== School Demo with MasterSchedule ===\n");
+
+        // Create a master schedule for 6 periods
+        MasterSchedule masterSchedule = new MasterSchedule(6);
+        masterSchedule.setPeriodTime(1, "8:00-8:50 AM");
+        masterSchedule.setPeriodTime(2, "9:00-9:50 AM");
+        masterSchedule.setPeriodTime(3, "10:00-10:50 AM");
 
         // Create a teacher
         Teacher teacher = new Teacher("Jane", "Smith", "Ms.");
-        System.out.println("Created teacher: " + teacher.getHonorific() + " " + teacher.getFirstName() + " " + teacher.getLastName());
+        System.out.println("Created teacher: " + teacher.getFullNameWithTitle());
 
-        // Create some courses
+        // Create some courses with period numbers
         Set<Integer> grades = new HashSet<>();
         grades.add(10);
-        Course algebra = new Course("Algebra I", "Math", "Ms. Smith", grades);
-        Course history = new Course("World History", "Social Studies", "Ms. Smith", new HashSet<>(Set.of(9, 10)));
+        Course algebra = new Course("Algebra I", "Math", 1, grades);
+        Course history = new Course("World History", "Social Studies", 3, new HashSet<>(Set.of(9, 10)));
 
-        // Set up teacher's schedule
-        teacher.addCourseToSchedule(1, algebra);
-        teacher.addCourseToSchedule(3, history);
-        System.out.println("Teacher's schedule: " + teacher.getSchedule());
+        // Add teacher and courses to master schedule
+        masterSchedule.addTeacher(teacher);
+        masterSchedule.addCourse(algebra);
+        masterSchedule.addCourse(history);
 
-        // Teacher greets classes
-        System.out.println("\nTeacher greetings:");
-        System.out.println("Period 1: " + teacher.sayHelloToClass(1));
-        System.out.println("Period 2: " + teacher.sayHelloToClass(2));
-        System.out.println("Period 3: " + teacher.sayHelloToClass(3));
+        // Assign teacher to courses
+        masterSchedule.addTeacherToCourse(algebra, teacher);
+        masterSchedule.addTeacherToCourse(history, teacher);
+
+        System.out.println("Teacher's schedule: " + masterSchedule.getSchedule(teacher));
 
         // Create a student
         Student student = new Student("John", "Doe", 10.0);
-        student.addClassToSchedule(algebra);
-        student.addClassToSchedule(history);
-        System.out.println("\nCreated student: " + student.getFirstName() + " " + student.getLastName());
-        System.out.println("Student's schedule: " + student.getSchedule());
+        masterSchedule.addStudent(student);
 
-        // Student greets teachers
-        System.out.println("\nStudent greetings:");
-        System.out.println("Period 1: " + student.helloTeacher(1));
-        System.out.println("Period 2: " + student.helloTeacher(2));
-        System.out.println("Period 3: " + student.helloTeacher(3));
+        // Add student to courses
+        masterSchedule.addStudentToCourse(algebra, student);
+        masterSchedule.addStudentToCourse(history, student);
+
+        System.out.println("\nCreated student: " + student.getFirstName() + " " + student.getLastName());
+        System.out.println("Student's schedule: " + masterSchedule.getSchedule(student));
+
+        // Show course information
+        System.out.println("\nCourse Information:");
+        for (Course course : masterSchedule.getCourses()) {
+            Teacher courseTeacher = masterSchedule.getTeacherForCourse(course);
+            System.out.println(course.getCourseName() + " (Period " + course.getPeriod() + 
+                             ") taught by " + (courseTeacher != null ? courseTeacher.getFullNameWithTitle() : "No teacher assigned"));
+        }
     }
 }
