@@ -1,4 +1,4 @@
-package Course;
+package com.example;
 
 import java.util.Collections;
 import java.util.HashSet;

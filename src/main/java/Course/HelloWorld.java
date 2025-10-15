@@ -1,9 +1,10 @@
+package Course;
+
 /**
  * A simple Hello World application to demonstrate the Java workspace setup.
  * This file validates that Java compilation and execution work properly
  * in the GitHub Codespace.
  */
-package Course;
 
 public class HelloWorld {
 

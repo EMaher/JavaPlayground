@@ -1,6 +1,12 @@
-package Course;
+package com.example;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
+
+public class StudentTest {
+    private Student s;
+
     @BeforeEach
     void setUp() {
         s = new Student("John", "Doe", 10.0);
