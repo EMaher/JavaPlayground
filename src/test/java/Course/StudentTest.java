@@ -1,4 +1,4 @@
-package com.example;
+package Course;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
@@ -24,7 +24,7 @@ public class StudentTest {
         s.setFirstName("Jane");
         s.setLastName("Smith");
         s.setCurrentGrade(11.0);
-        
+
         assertEquals("Jane", s.getFirstName(), "firstName should be updated");
         assertEquals("Smith", s.getLastName(), "lastName should be updated");
         assertEquals(11.0, s.getCurrentGrade(), "currentGrade should be updated");

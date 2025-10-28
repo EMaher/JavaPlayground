@@ -23,7 +23,7 @@ public class HelloWorld {
         System.out.println("Message length: " + message.length());
 
         // Array processing
-        int[] numbers = { 1, 2, 3, 4, 5 };
+        int[] numbers = {1, 2, 3, 4, 5};
         int sum = 0;
         for (int number : numbers) {
             sum += number;
@@ -46,7 +46,7 @@ public class HelloWorld {
 
         @Override
         public String toString() {
-            return String.format("Person{name='%s', age=%d}", name, age);
+            return "Person{name='%s', age=%d}".formatted(name, age);
         }
     }
 }

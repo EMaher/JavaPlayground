@@ -1,6 +1,7 @@
-package com.example;
+package Course;
 
 import org.junit.jupiter.api.Test;
+
 import org.junit.jupiter.api.BeforeEach;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -24,7 +25,7 @@ public class TeacherTest {
     @Test
     void fullNameWithTitle() {
         assertEquals("Ms. Jane Smith", teacher.getFullNameWithTitle(), "full name with title should match");
-        
+
         // Test with different values
         Teacher teacher2 = new Teacher("John", "Doe", "Dr.");
         assertEquals("Dr. John Doe", teacher2.getFullNameWithTitle(), "full name with title should match");
@@ -35,7 +36,7 @@ public class TeacherTest {
         teacher.setFirstName("Joan");
         teacher.setLastName("Johnson");
         teacher.setHonorific("Dr.");
-        
+
         assertEquals("Joan", teacher.getFirstName(), "firstName should be updated");
         assertEquals("Johnson", teacher.getLastName(), "lastName should be updated");
         assertEquals("Dr.", teacher.getHonorific(), "honorific should be updated");

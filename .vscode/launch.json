@@ -3,6 +3,34 @@
   "configurations": [
     {
       "type": "java",
+      "name": "Receipt2Formatted",
+      "request": "launch",
+      "mainClass": "Receipts.Receipt2Formatted",
+      "projectName": "JavaPlayground"
+    },
+    {
+      "type": "java",
+      "name": "Receipt1",
+      "request": "launch",
+      "mainClass": "Receipts.Receipt1",
+      "projectName": "JavaPlayground"
+    },
+    {
+      "type": "java",
+      "name": "Receipt2",
+      "request": "launch",
+      "mainClass": "Receipts.Receipt2",
+      "projectName": "JavaPlayground"
+    },
+    {
+      "type": "java",
+      "name": "DemoToStringOverrides",
+      "request": "launch",
+      "mainClass": "demo.DemoToStringOverrides",
+      "projectName": "JavaPlayground"
+    },
+    {
+      "type": "java",
       "name": "Launch Current File",
       "request": "launch",
       "mainClass": "${file}",

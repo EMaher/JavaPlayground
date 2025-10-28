@@ -1,4 +1,4 @@
-package com.example;
+package Course;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -53,8 +53,8 @@ public class SchoolDemo {
         System.out.println("\nCourse Information:");
         for (Course course : masterSchedule.getCourses()) {
             Teacher courseTeacher = masterSchedule.getTeacherForCourse(course);
-            System.out.println(course.getCourseName() + " (Period " + course.getPeriod() + 
-                             ") taught by " + (courseTeacher != null ? courseTeacher.getFullNameWithTitle() : "No teacher assigned"));
+            System.out.println(course.getCourseName() + " (Period " + course.getPeriod() +
+                    ") taught by " + (courseTeacher != null ? courseTeacher.getFullNameWithTitle() : "No teacher assigned"));
         }
     }
 }

@@ -1,4 +1,4 @@
-package com.example;
+package Course;
 
 import java.util.Collections;
 import java.util.HashSet;
@@ -75,10 +75,12 @@ public class Course {
 
     @Override
     public boolean equals(Object o) {
-        if (this == o)
+        if (this == o) {
             return true;
-        if (o == null || getClass() != o.getClass())
+        }
+        if (o == null || getClass() != o.getClass()) {
             return false;
+        }
         Course course = (Course) o;
         return Objects.equals(id, course.id);
     }

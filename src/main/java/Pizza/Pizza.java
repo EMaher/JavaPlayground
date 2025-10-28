@@ -1,6 +1,6 @@
 package Pizza;
 
-public class Pizza extends Object{
+public class Pizza extends Object {
     private String size;
     private String toppings;
 
